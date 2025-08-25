@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@onready var player: CharacterBody2D = $"."
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 const JUMP = 300.0
 const SPEED = 500.0
@@ -17,8 +17,12 @@ func _physics_process(delta: float) -> void:
 func get_input(event, delta):
 	if event.is_action_pressed("left"):
 		position.x -= SPEED * delta
-		print("left")
+		animated_sprite.flip_h = true
+		animated_sprite.play("Run")
 	elif event.is_action_pressed("right"):
 		position.x += SPEED * delta
-		print("right")
+		animated_sprite.flip_h = false
+		animated_sprite.play("Run")
+	else:
+		animated_sprite.play("Idle")
 	move_and_slide()
