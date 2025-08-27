@@ -22,26 +22,31 @@ func _physics_process(delta: float) -> void:
 	
 
 func get_input():
+	#var for player direction
+	var direction = Input.get_axis("left", "right")
+	
+	#Handle animations
+	if is_on_floor() and direction:
+		animated_sprite.play("Run")
+		if direction >= 1:
+			animated_sprite.flip_h = false
+		else:
+			animated_sprite.flip_h = true
+	elif not is_on_floor():
+		animated_sprite.play("Jump")
+	else:
+		animated_sprite.play("Idle")
+	
 	#Handle jump
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP
 	
 	if Input.is_action_just_released("jump") and velocity.y < 0:
 		velocity.y *= decelerate_on_jump_release
-		animated_sprite.play("Jump")
 	
 	#Handle movement w/ accel/decel
-	var direction = Input.get_axis("left", "right")
 	if direction:
 		velocity.x = move_toward(velocity.x, direction * SPEED, SPEED * acceleration) #acceleration
-		animated_sprite.play("Run")
-		
-		if direction >= 1:
-			animated_sprite.flip_h = false
-		else:
-			animated_sprite.flip_h = true
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED * deceleration) #deceleration
-		animated_sprite.play("Idle")
-		
 	move_and_slide()
