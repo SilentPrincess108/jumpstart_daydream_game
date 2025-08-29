@@ -46,22 +46,6 @@ texture = ExtResource("3_bt44k")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_kx6l7")
 
-[sub_resource type="Animation" id="Animation_n46q3"]
-resource_name = "down-up"
-length = 1.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-574, -461)]
-}
-
 [sub_resource type="Animation" id="Animation_btoec"]
 length = 1.5
 loop_mode = 2
@@ -78,10 +62,42 @@ tracks/0/keys = {
 "values": [Vector2(-574, -461), Vector2(-574, -208)]
 }
 
+[sub_resource type="Animation" id="Animation_n46q3"]
+resource_name = "down-up"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-574, -461)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gwceb"]
 _data = {
 &"RESET": SubResource("Animation_btoec"),
 &"down-up": SubResource("Animation_n46q3")
+}
+
+[sub_resource type="Animation" id="Animation_3sk1a"]
+length = 1.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-331, -211), Vector2(-331, -392)]
 }
 
 [sub_resource type="Animation" id="Animation_l53as"]
@@ -101,9 +117,14 @@ tracks/0/keys = {
 "values": [Vector2(-331, -211), Vector2(-331, -387)]
 }
 
-[sub_resource type="Animation" id="Animation_3sk1a"]
-length = 1.5
-loop_mode = 2
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_08mmt"]
+_data = {
+&"RESET": SubResource("Animation_3sk1a"),
+&"up-down": SubResource("Animation_l53as")
+}
+
+[sub_resource type="Animation" id="Animation_kx6l7"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -111,16 +132,10 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-331, -211), Vector2(-331, -392)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_08mmt"]
-_data = {
-&"RESET": SubResource("Animation_3sk1a"),
-&"up-down": SubResource("Animation_l53as")
+"values": [Vector2(-7, -209)]
 }
 
 [sub_resource type="Animation" id="Animation_bt44k"]
@@ -139,21 +154,6 @@ tracks/0/keys = {
 "values": [Vector2(-7, -209), Vector2(-159, -209)]
 }
 
-[sub_resource type="Animation" id="Animation_kx6l7"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-7, -209)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_n46q3"]
 _data = {
 &"RESET": SubResource("Animation_kx6l7"),
@@ -170,33 +170,36 @@ layer_0/tile_data = PackedInt32Array(1245144, 0, 9, 1245145, 0, 9, 1245146, 0, 9
 layer_1/name = "foreground"
 layer_1/tile_data = PackedInt32Array(720868, 131072, 2, 720870, 131072, 2, 720872, 131072, 2, 720874, 131072, 2, 786404, 131072, 2, 851940, 131072, 2, 917476, 131072, 2, 917478, 131072, 2, 917480, 131072, 2, 917482, 131072, 2, 851946, 131072, 2, 786410, 131072, 2, 851942, 131072, 2, 851943, 131072, 2, 851944, 131072, 2, 786408, 131072, 2, 786407, 131072, 2, 786406, 131072, 2, 720866, 131072, 2, 720876, 131072, 2, 786412, 131072, 2, 851948, 131072, 2, 917484, 131072, 2, 917474, 131072, 2, 851938, 131072, 2, 786402, 131072, 2, 720864, 131072, 2, 720878, 131072, 2, 786414, 131072, 2, 851950, 131072, 2, 917486, 131072, 2, 917472, 131072, 2, 851936, 131072, 2, 786400, 131072, 2, 983008, 131072, 2, 983009, 131072, 2, 983010, 131072, 2, 983011, 131072, 2, 983012, 131072, 2, 983013, 131072, 2, 983014, 131072, 2, 983015, 131072, 2, 983016, 131072, 2, 983017, 131072, 2, 983018, 131072, 2, 983019, 131072, 2, 983020, 131072, 2, 983021, 131072, 2, 983022, 131072, 2, 983004, 131072, 2, 720882, 131072, 3, 589814, 131072, 3, 786425, 131072, 3, 917501, 131072, 3, 655360, 131072, 3, 458755, 131072, 3, 393233, 65536, 6, 65564, 65536, 6, -1638394, 131072, 3, -1703925, 131072, 3, -1703920, 131072, 3, -1572843, 131072, 3, 327688, 131072, 3, -327661, 524288, 2, -655336, 524288, 2, -983010, 524288, 0, -1310695, 524288, 0, -2359341, 131072, 3, -2359342, 131072, 3, -2359343, 131072, 3, -2359344, 131072, 3, -2359345, 131072, 3, -2359346, 131072, 3, -2359347, 131072, 3, -2359348, 131072, 3, -2359349, 131072, 3, -2359350, 131072, 3, -2359351, 131072, 3, -2359352, 131072, 3, -2359353, 131072, 3, -2359354, 131072, 3)
 
-[node name="player" parent="." instance=ExtResource("2_jirdo")]
-position = Vector2(-414, 116)
-collision_layer = 2
-
-[node name="CartridgePlatform3" parent="." instance=ExtResource("3_kx6l7")]
+[node name="Zelda" parent="." instance=ExtResource("3_kx6l7")]
 position = Vector2(-574, -461)
+game_name = "THE LEGEND OF ZELDA [1986]"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CartridgePlatform3"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Zelda"]
 libraries = {
 &"": SubResource("AnimationLibrary_gwceb")
 }
 autoplay = "RESET"
 
-[node name="CartridgePlatform2" parent="." instance=ExtResource("3_kx6l7")]
+[node name="Duck Hunt" parent="." instance=ExtResource("3_kx6l7")]
 position = Vector2(-331, -211)
+game_name = "DUCK HUNT [1985]"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CartridgePlatform2"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Duck Hunt"]
 libraries = {
 &"": SubResource("AnimationLibrary_08mmt")
 }
 autoplay = "RESET"
 
-[node name="CartridgePlatform1" parent="." instance=ExtResource("3_kx6l7")]
+[node name="Mario" parent="." instance=ExtResource("3_kx6l7")]
 position = Vector2(-7, -209)
+game_name = "SUPER MARIO BROS. [1985]"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CartridgePlatform1"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Mario"]
 libraries = {
 &"": SubResource("AnimationLibrary_n46q3")
 }
 autoplay = "side-to-side"
+
+[node name="player" parent="." instance=ExtResource("2_jirdo")]
+position = Vector2(106, -447)
+collision_layer = 2

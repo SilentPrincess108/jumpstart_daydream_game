@@ -1,14 +1,44 @@
-[gd_scene load_steps=3 format=3 uid="uid://cqtcs0682mr0a"]
+[gd_scene load_steps=7 format=3 uid="uid://cqtcs0682mr0a"]
 
+[ext_resource type="Script" uid="uid://bq1dfs7nenbo5" path="res://scripts/cartridge_platform.gd" id="1_5n6u7"]
 [ext_resource type="Texture2D" uid="uid://mjwyfwlu5fpv" path="res://assets/sprites/mario_cart.png" id="1_xyqns"]
+[ext_resource type="FontFile" uid="uid://dtf3hcw0utq85" path="res://assets/fonts/nintendo-nes-font.otf" id="3_rt0jj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5n6u7"]
 size = Vector2(128, 160)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xyqns"]
+size = Vector2(128, 224)
+
+[sub_resource type="FontVariation" id="FontVariation_u5m1e"]
+base_font = ExtResource("3_rt0jj")
+
 [node name="CartridgePlatform" type="AnimatableBody2D"]
+script = ExtResource("1_5n6u7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_xyqns")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_5n6u7")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -32)
+shape = SubResource("RectangleShape2D_xyqns")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -128.0
+offset_top = -185.0
+offset_right = 130.0
+offset_bottom = -160.0
+theme_override_fonts/font = SubResource("FontVariation_u5m1e")
+theme_override_font_sizes/font_size = 15
+text = "[dynamic]"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
