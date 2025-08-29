@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqtcs0682mr0a"]
+
+[ext_resource type="Texture2D" uid="uid://mjwyfwlu5fpv" path="res://assets/sprites/mario_cart.png" id="1_xyqns"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5n6u7"]
+size = Vector2(128, 160)
+
+[node name="CartridgePlatform" type="AnimatableBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_xyqns")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5n6u7")
