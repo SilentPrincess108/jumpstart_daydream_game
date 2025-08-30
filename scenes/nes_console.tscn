@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://ejohhmmc80mt"]
+
+[ext_resource type="Texture2D" uid="uid://bgpbyr1virrtp" path="res://assets/sprites/nes_console.png" id="1_uqw8d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3dps4"]
+size = Vector2(256, 99)
+
+[node name="nes" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_uqw8d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_3dps4")
