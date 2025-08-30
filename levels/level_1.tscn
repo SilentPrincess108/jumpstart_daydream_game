@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://f37rtv0wfqyx"]
+[gd_scene load_steps=18 format=3 uid="uid://f37rtv0wfqyx"]
 
 [ext_resource type="PackedScene" uid="uid://bjcyydy205nkq" path="res://scenes/player.tscn" id="2_jirdo"]
 [ext_resource type="Texture2D" uid="uid://b1rrqxe543joh" path="res://assets/sprites/asset_tileset.png" id="3_bt44k"]
 [ext_resource type="PackedScene" uid="uid://cqtcs0682mr0a" path="res://scenes/cartridge_platform.tscn" id="3_kx6l7"]
 [ext_resource type="FontFile" uid="uid://dtf3hcw0utq85" path="res://assets/fonts/nintendo-nes-font.otf" id="4_kx6l7"]
+[ext_resource type="PackedScene" uid="uid://dmavrp6jb6c0i" path="res://scenes/killzone.tscn" id="5_n46q3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kx6l7"]
 texture = ExtResource("3_bt44k")
@@ -23,7 +24,6 @@ texture = ExtResource("3_bt44k")
 0:7/0 = 0
 0:8/0 = 0
 0:9/0 = 0
-0:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:2/size_in_atlas = Vector2i(2, 1)
 2:2/0 = 0
 2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15.9891, -8.02319, 15.9891, -8.02319, 15.9891, 8.02319, -16.1037, 8.0805)
@@ -161,6 +161,8 @@ _data = {
 &"side-to-side": SubResource("Animation_bt44k")
 }
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_btoec"]
+
 [node name="level 1" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -172,12 +174,13 @@ layer_1/name = "foreground"
 layer_1/tile_data = PackedInt32Array(720868, 131072, 2, 720870, 131072, 2, 720872, 131072, 2, 720874, 131072, 2, 786404, 131072, 2, 851940, 131072, 2, 917476, 131072, 2, 917478, 131072, 2, 917480, 131072, 2, 917482, 131072, 2, 851946, 131072, 2, 786410, 131072, 2, 851942, 131072, 2, 851943, 131072, 2, 851944, 131072, 2, 786408, 131072, 2, 786407, 131072, 2, 786406, 131072, 2, 720866, 131072, 2, 720876, 131072, 2, 786412, 131072, 2, 851948, 131072, 2, 917484, 131072, 2, 917474, 131072, 2, 851938, 131072, 2, 786402, 131072, 2, 720864, 131072, 2, 720878, 131072, 2, 786414, 131072, 2, 851950, 131072, 2, 917486, 131072, 2, 917472, 131072, 2, 851936, 131072, 2, 786400, 131072, 2, 983008, 131072, 2, 983009, 131072, 2, 983010, 131072, 2, 983011, 131072, 2, 983012, 131072, 2, 983013, 131072, 2, 983014, 131072, 2, 983015, 131072, 2, 983016, 131072, 2, 983017, 131072, 2, 983018, 131072, 2, 983019, 131072, 2, 983020, 131072, 2, 983021, 131072, 2, 983022, 131072, 2, 983004, 131072, 2, 720882, 131072, 3, 589814, 131072, 3, 786425, 131072, 3, 917501, 131072, 3, 655360, 131072, 3, 458755, 131072, 3, 393233, 65536, 6, 65564, 65536, 6, -1638394, 131072, 3, -1703925, 131072, 3, -1703920, 131072, 3, -1572843, 131072, 3, 327688, 131072, 3, -327661, 524288, 2, -655336, 524288, 2, -983010, 524288, 0, -1310695, 524288, 0, -2359341, 131072, 3, -2359342, 131072, 3, -2359343, 131072, 3, -2359344, 131072, 3, -2359345, 131072, 3, -2359346, 131072, 3, -2359347, 131072, 3, -2359348, 131072, 3, -2359349, 131072, 3, -2359350, 131072, 3, -2359351, 131072, 3, -2359352, 131072, 3, -2359353, 131072, 3, -2359354, 131072, 3)
 
 [node name="player" parent="." instance=ExtResource("2_jirdo")]
-position = Vector2(108, -434)
+position = Vector2(-464, 115)
 collision_layer = 2
 
 [node name="Zelda" parent="." instance=ExtResource("3_kx6l7")]
 position = Vector2(-574, -461)
 game_name = "THE LEGEND OF ZELDA [1986]"
+descrip = "The Legend of Zelda was most popularly known for its complex puzzles. As one of the first open world games of it's time, it revolutionized the genre!"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Zelda"]
 libraries = {
@@ -188,6 +191,7 @@ autoplay = "RESET"
 [node name="Duck Hunt" parent="." instance=ExtResource("3_kx6l7")]
 position = Vector2(-331, -211)
 game_name = "DUCK HUNT [1985]"
+descrip = "Duck Hunt was one of the first light gun games, a revolutionary technology at the time. It's release helped to popularize light gun video games!"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Duck Hunt"]
 libraries = {
@@ -198,6 +202,7 @@ autoplay = "RESET"
 [node name="Mario" parent="." instance=ExtResource("3_kx6l7")]
 position = Vector2(-7, -209)
 game_name = "SUPER MARIO BROS. [1985]"
+descrip = "As one of the first of it's kind in the genre, Super Mario Bros pioneered the platforming genre and is one of the most iconic video games in the world!"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Mario"]
 libraries = {
@@ -295,3 +300,9 @@ theme_override_font_sizes/font_size = 10
 text = "Here are a some of the most popular and perhaps, influential games:"
 horizontal_alignment = 1
 autowrap_mode = 2
+
+[node name="Killzone" parent="." instance=ExtResource("5_n46q3")]
+position = Vector2(-6, 308)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+shape = SubResource("WorldBoundaryShape2D_btoec")

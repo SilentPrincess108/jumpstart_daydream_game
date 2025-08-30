@@ -42,13 +42,12 @@ autowrap_mode = 2
 
 [node name="Desc" type="Label" parent="."]
 offset_left = -128.0
-offset_top = -165.0
-offset_right = 130.0
-offset_bottom = -140.0
+offset_top = -172.0
+offset_right = 150.0
+offset_bottom = -144.0
 theme_override_fonts/font = SubResource("FontVariation_u5m1e")
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 8
 text = "[dynamic]"
-horizontal_alignment = 1
 autowrap_mode = 2
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -25,7 +25,7 @@ func get_input():
 	#var for player direction
 	var direction = Input.get_axis("left", "right")
 	
-	#Handle animations
+	#Handle animations and sfx
 	if is_on_floor() and direction:
 		animated_sprite.play("Run")
 		if direction >= 1:
@@ -34,6 +34,7 @@ func get_input():
 			animated_sprite.flip_h = true
 	elif not is_on_floor():
 		animated_sprite.play("Jump")
+		
 	else:
 		animated_sprite.play("Idle")
 	
