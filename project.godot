@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Console_Chronicles"
-run/main_scene="uid://bjcyydy205nkq"
+run/main_scene="uid://f37rtv0wfqyx"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
