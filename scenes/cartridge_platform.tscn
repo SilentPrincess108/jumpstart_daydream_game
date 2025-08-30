@@ -30,12 +30,23 @@ position = Vector2(0, -32)
 shape = SubResource("RectangleShape2D_xyqns")
 
 [node name="Label" type="Label" parent="."]
-offset_left = -128.0
-offset_top = -185.0
-offset_right = 130.0
-offset_bottom = -160.0
+offset_left = -101.0
+offset_top = -223.0
+offset_right = 106.0
+offset_bottom = -198.0
 theme_override_fonts/font = SubResource("FontVariation_u5m1e")
 theme_override_font_sizes/font_size = 15
+text = "[dynamic]"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Desc" type="Label" parent="."]
+offset_left = -128.0
+offset_top = -165.0
+offset_right = 130.0
+offset_bottom = -140.0
+theme_override_fonts/font = SubResource("FontVariation_u5m1e")
+theme_override_font_sizes/font_size = 10
 text = "[dynamic]"
 horizontal_alignment = 1
 autowrap_mode = 2
