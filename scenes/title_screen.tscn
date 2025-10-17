@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://dwu8imtk2vy3s"]
+[gd_scene load_steps=2 format=3 uid="uid://dwu8imtk2vy3s"]
+
+[ext_resource type="Script" uid="uid://bbo8w8s5yx82m" path="res://scripts/title_screen.gd" id="1_fgkus"]
 
 [node name="title_screen" type="Control"]
 layout_mode = 3
@@ -7,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_fgkus")
 
 [node name="TitleLabel" type="Label" parent="."]
 layout_mode = 1
