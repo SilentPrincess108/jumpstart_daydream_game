@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://f37rtv0wfqyx"]
+[gd_scene load_steps=24 format=3 uid="uid://f37rtv0wfqyx"]
 
 [ext_resource type="PackedScene" uid="uid://bjcyydy205nkq" path="res://scenes/player.tscn" id="2_jirdo"]
 [ext_resource type="PackedScene" uid="uid://ejohhmmc80mt" path="res://scenes/nes_console.tscn" id="3_3sk1a"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cp6urgv7v8w7y" path="res://assets/sprites/zerlda_cart.png" id="4_l53as"]
 [ext_resource type="Texture2D" uid="uid://mjwyfwlu5fpv" path="res://assets/sprites/mario_cart.png" id="5_l53as"]
 [ext_resource type="PackedScene" uid="uid://dmavrp6jb6c0i" path="res://scenes/killzone.tscn" id="5_n46q3"]
+[ext_resource type="PackedScene" uid="uid://ookvb3hawlnj" path="res://scenes/portal.tscn" id="10_08mmt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kx6l7"]
 texture = ExtResource("3_bt44k")
@@ -345,3 +346,6 @@ theme_override_font_sizes/font_size = 10
 text = "You've reached the end!"
 horizontal_alignment = 1
 autowrap_mode = 2
+
+[node name="portal" parent="." instance=ExtResource("10_08mmt")]
+position = Vector2(-819, -632)
