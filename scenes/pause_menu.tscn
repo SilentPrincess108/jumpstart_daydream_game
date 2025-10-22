@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://dwyr5sah8txg"]
+[gd_scene load_steps=2 format=3 uid="uid://dwyr5sah8txg"]
+
+[ext_resource type="Script" uid="uid://47oly3bohueg" path="res://scripts/pause_menu.gd" id="1_n87rw"]
 
 [node name="pause_menu" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -9,6 +12,7 @@ offset_top = -3.0
 offset_bottom = -3.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_n87rw")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -52,3 +56,7 @@ text = "Restart"
 [node name="quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="VBoxContainer/restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="VBoxContainer/quit" to="." method="_on_quit_pressed"]

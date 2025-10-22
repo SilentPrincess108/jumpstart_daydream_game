@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://f37rtv0wfqyx"]
+[gd_scene load_steps=25 format=3 uid="uid://f37rtv0wfqyx"]
 
 [ext_resource type="PackedScene" uid="uid://bjcyydy205nkq" path="res://scenes/player.tscn" id="2_jirdo"]
 [ext_resource type="PackedScene" uid="uid://ejohhmmc80mt" path="res://scenes/nes_console.tscn" id="3_3sk1a"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://mjwyfwlu5fpv" path="res://assets/sprites/mario_cart.png" id="5_l53as"]
 [ext_resource type="PackedScene" uid="uid://dmavrp6jb6c0i" path="res://scenes/killzone.tscn" id="5_n46q3"]
 [ext_resource type="PackedScene" uid="uid://ookvb3hawlnj" path="res://scenes/portal.tscn" id="10_08mmt"]
+[ext_resource type="PackedScene" uid="uid://dwyr5sah8txg" path="res://scenes/pause_menu.tscn" id="11_5ot28"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kx6l7"]
 texture = ExtResource("3_bt44k")
@@ -349,3 +350,14 @@ autowrap_mode = 2
 
 [node name="portal" parent="." instance=ExtResource("10_08mmt")]
 position = Vector2(-819, -632)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="pause_menu" parent="CanvasLayer" instance=ExtResource("11_5ot28")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = 0.0
+offset_bottom = 0.0
