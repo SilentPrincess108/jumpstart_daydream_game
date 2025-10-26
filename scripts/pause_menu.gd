@@ -45,4 +45,4 @@ func _on_restart_pressed() -> void:
 
 func _on_quit_pressed() -> void:
 	#quit current level and return to home screen
-	pass # Replace with function body.
+	get_tree().quit()

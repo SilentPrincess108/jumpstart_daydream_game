@@ -1,6 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://dwu8imtk2vy3s"]
+[gd_scene load_steps=9 format=3 uid="uid://dwu8imtk2vy3s"]
 
 [ext_resource type="Script" uid="uid://bbo8w8s5yx82m" path="res://scripts/title_screen.gd" id="1_fgkus"]
+[ext_resource type="FontFile" uid="uid://dtf3hcw0utq85" path="res://assets/fonts/nintendo-nes-font.otf" id="2_sa3yf"]
+[ext_resource type="Texture2D" uid="uid://b2ugvs4mi5fcy" path="res://assets/sprites/nes_controller.png" id="3_s4lrb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e54dn"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dc4i4"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mgrm8"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3yumr"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s4lrb"]
+bg_color = Color(0.776471, 0.517647, 0.54902, 0)
 
 [node name="title_screen" type="Control"]
 layout_mode = 3
@@ -11,6 +28,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_fgkus")
 
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="TitleLabel" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -18,47 +43,88 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -229.0
-offset_top = -215.0
-offset_right = 229.0
-offset_bottom = -146.0
+offset_left = -450.0
+offset_top = -271.0
+offset_right = 450.0
+offset_bottom = -202.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 5
+theme_override_fonts/font = ExtResource("2_sa3yf")
 theme_override_font_sizes/font_size = 50
-text = "Console Chronicles"
+text = "CONSOLE CHRONICLES"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="HBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -164.0
-offset_top = -38.0
-offset_right = 164.0
-offset_bottom = 152.0
+offset_left = -105.0
+offset_top = 152.0
+offset_right = 105.0
+offset_bottom = 285.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
 
-[node name="PlayButton" type="Button" parent="VBoxContainer"]
+[node name="PlayButton" type="Button" parent="HBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.741176, 0.290196, 0.270588, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_sa3yf")
 theme_override_font_sizes/font_size = 30
-text = "Play"
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_e54dn")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_dc4i4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mgrm8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3yumr")
+theme_override_styles/normal = SubResource("StyleBoxFlat_s4lrb")
+text = "PLAY"
 
-[node name="OptionsButton" type="Button" parent="VBoxContainer"]
+[node name="OptionsButton" type="Button" parent="HBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.741176, 0.290196, 0.270588, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_sa3yf")
 theme_override_font_sizes/font_size = 30
-text = "Options"
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_e54dn")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_dc4i4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mgrm8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3yumr")
+theme_override_styles/normal = SubResource("StyleBoxFlat_s4lrb")
+text = "OPTIONS"
 
-[node name="QuitButton" type="Button" parent="VBoxContainer"]
+[node name="QuitButton" type="Button" parent="HBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.741176, 0.290196, 0.270588, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_sa3yf")
 theme_override_font_sizes/font_size = 30
-text = "Quit"
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_e54dn")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_dc4i4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mgrm8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3yumr")
+theme_override_styles/normal = SubResource("StyleBoxFlat_s4lrb")
+text = "QUIT"
 
-[connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(600, 334)
+scale = Vector2(3, 3)
+texture = ExtResource("3_s4lrb")
+
+[connection signal="pressed" from="HBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

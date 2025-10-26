@@ -1,6 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://dwyr5sah8txg"]
+[gd_scene load_steps=8 format=3 uid="uid://dwyr5sah8txg"]
 
 [ext_resource type="Script" uid="uid://47oly3bohueg" path="res://scripts/pause_menu.gd" id="1_n87rw"]
+[ext_resource type="FontFile" uid="uid://dtf3hcw0utq85" path="res://assets/fonts/nintendo-nes-font.otf" id="2_myx47"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_myx47"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kukqi"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v4r4p"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5d2l8"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7l7mv"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="pause_menu" type="Control"]
 process_mode = 3
@@ -13,6 +29,14 @@ offset_bottom = -3.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_n87rw")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -27,8 +51,11 @@ offset_right = 28.5
 offset_bottom = -160.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 5
+theme_override_fonts/font = ExtResource("2_myx47")
 theme_override_font_sizes/font_size = 50
-text = "Paused"
+text = "PAUSED"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -37,25 +64,58 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -135.5
-offset_top = -37.0
-offset_right = 135.5
-offset_bottom = 96.0
+offset_left = -135.0
+offset_top = -21.0
+offset_right = 136.0
+offset_bottom = 142.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 20
+theme_override_constants/separation = 35
 
 [node name="resume" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "Resume"
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.741176, 0.290196, 0.270588, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_myx47")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_myx47")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_kukqi")
+theme_override_styles/hover = SubResource("StyleBoxFlat_v4r4p")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5d2l8")
+theme_override_styles/normal = SubResource("StyleBoxFlat_7l7mv")
+text = "RESUME"
 
 [node name="restart" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "Restart"
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.741176, 0.290196, 0.270588, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_myx47")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_myx47")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_kukqi")
+theme_override_styles/hover = SubResource("StyleBoxFlat_v4r4p")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5d2l8")
+theme_override_styles/normal = SubResource("StyleBoxFlat_7l7mv")
+text = "RESTART"
 
 [node name="quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "Quit"
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.741176, 0.290196, 0.270588, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_myx47")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_myx47")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_kukqi")
+theme_override_styles/hover = SubResource("StyleBoxFlat_v4r4p")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5d2l8")
+theme_override_styles/normal = SubResource("StyleBoxFlat_7l7mv")
+text = "QUIT"
 
 [connection signal="pressed" from="VBoxContainer/resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="VBoxContainer/restart" to="." method="_on_restart_pressed"]
