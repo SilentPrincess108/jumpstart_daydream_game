@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://duofudv2px8lg"]
+
+[ext_resource type="Texture2D" uid="uid://d11n4biyrchn" path="res://assets/sprites/temp_store_bg1.png" id="1_4uhdm"]
+[ext_resource type="PackedScene" uid="uid://c40qe6kaie8gm" path="res://scenes/console_icon.tscn" id="2_ljd76"]
+
+[node name="level_screen" type="Node"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(600, 350)
+scale = Vector2(0.975, 0.975)
+texture = ExtResource("1_4uhdm")
+
+[node name="console_icon" parent="." instance=ExtResource("2_ljd76")]
+position = Vector2(160, 207)
+scale = Vector2(3, 3)
+
+[node name="console_icon2" parent="." instance=ExtResource("2_ljd76")]
+position = Vector2(453, 211)
+scale = Vector2(3, 3)
+
+[node name="console_icon3" parent="." instance=ExtResource("2_ljd76")]
+position = Vector2(156, 437)
+scale = Vector2(3, 3)
+
+[node name="console_icon4" parent="." instance=ExtResource("2_ljd76")]
+position = Vector2(444, 437)
+scale = Vector2(3, 3)

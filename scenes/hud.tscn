@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfex2b82qwytd"]
+
+[ext_resource type="FontFile" uid="uid://dtf3hcw0utq85" path="res://assets/fonts/nintendo-nes-font.otf" id="1_ahhtf"]
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="CoinLabel" type="Label" parent="."]
+offset_left = 16.0
+offset_top = 17.0
+offset_right = 226.0
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("1_ahhtf")
+theme_override_font_sizes/font_size = 15
+text = "COINS: "
