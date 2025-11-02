@@ -1,27 +1,65 @@
-[gd_scene load_steps=3 format=3 uid="uid://duofudv2px8lg"]
+[gd_scene load_steps=8 format=3 uid="uid://duofudv2px8lg"]
 
 [ext_resource type="Texture2D" uid="uid://d11n4biyrchn" path="res://assets/sprites/temp_store_bg1.png" id="1_4uhdm"]
-[ext_resource type="PackedScene" uid="uid://c40qe6kaie8gm" path="res://scenes/console_icon.tscn" id="2_ljd76"]
+[ext_resource type="Script" uid="uid://2cfkuh3osuoe" path="res://scripts/level_screen.gd" id="1_mqw8u"]
+[ext_resource type="Texture2D" uid="uid://c07wvopv7xdci" path="res://assets/sprites/test_buttons.png" id="2_ljd76"]
+[ext_resource type="Script" uid="uid://demwoi73xonjw" path="res://scripts/console_buttons.gd" id="3_g5mqe"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g5mqe"]
+atlas = ExtResource("2_ljd76")
+region = Rect2(16, 9, 109, 109)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mqw8u"]
+atlas = ExtResource("2_ljd76")
+region = Rect2(268, 9, 109, 109)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ljd76"]
+atlas = ExtResource("2_ljd76")
+region = Rect2(148, 9, 109, 109)
 
 [node name="level_screen" type="Node"]
+script = ExtResource("1_mqw8u")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(600, 350)
 scale = Vector2(0.975, 0.975)
 texture = ExtResource("1_4uhdm")
 
-[node name="console_icon" parent="." instance=ExtResource("2_ljd76")]
-position = Vector2(160, 207)
-scale = Vector2(3, 3)
+[node name="test_button1" type="TextureButton" parent="."]
+offset_left = 90.0
+offset_top = 158.0
+offset_right = 199.0
+offset_bottom = 267.0
+texture_normal = SubResource("AtlasTexture_g5mqe")
+texture_pressed = SubResource("AtlasTexture_mqw8u")
+texture_hover = SubResource("AtlasTexture_ljd76")
+script = ExtResource("3_g5mqe")
 
-[node name="console_icon2" parent="." instance=ExtResource("2_ljd76")]
-position = Vector2(453, 211)
-scale = Vector2(3, 3)
+[node name="test_button2" type="TextureButton" parent="."]
+offset_left = 388.0
+offset_top = 153.0
+offset_right = 497.0
+offset_bottom = 262.0
+texture_normal = SubResource("AtlasTexture_g5mqe")
+texture_pressed = SubResource("AtlasTexture_mqw8u")
+texture_hover = SubResource("AtlasTexture_ljd76")
 
-[node name="console_icon3" parent="." instance=ExtResource("2_ljd76")]
-position = Vector2(156, 437)
-scale = Vector2(3, 3)
+[node name="test_button3" type="TextureButton" parent="."]
+offset_left = 89.0
+offset_top = 377.0
+offset_right = 198.0
+offset_bottom = 486.0
+texture_normal = SubResource("AtlasTexture_g5mqe")
+texture_pressed = SubResource("AtlasTexture_mqw8u")
+texture_hover = SubResource("AtlasTexture_ljd76")
 
-[node name="console_icon4" parent="." instance=ExtResource("2_ljd76")]
-position = Vector2(444, 437)
-scale = Vector2(3, 3)
+[node name="test_button4" type="TextureButton" parent="."]
+offset_left = 394.0
+offset_top = 381.0
+offset_right = 503.0
+offset_bottom = 490.0
+texture_normal = SubResource("AtlasTexture_g5mqe")
+texture_pressed = SubResource("AtlasTexture_mqw8u")
+texture_hover = SubResource("AtlasTexture_ljd76")
+
+[connection signal="pressed" from="test_button1" to="." method="_on_test_button_1_pressed"]
